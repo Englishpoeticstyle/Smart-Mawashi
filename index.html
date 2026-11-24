@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Mawashi - Khenchela | سمارت مواشي</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,sans-serif}
+body{background:#f7f5ef;color:#222}
+header{background:#1a4d2e;color:white;padding:20px;text-align:center}
+header h1{font-size:28px}
+header p{opacity:.9;margin-top:5px}
+.hero{background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url('https://images.unsplash.com/photo-1484557985045-edf25e08da73?w=1200');background-size:cover;background-position:center;color:white;text-align:center;padding:70px 20px}
+.hero h2{font-size:32px;margin-bottom:10px}
+.hero p{font-size:17px;max-width:650px;margin:0 auto 20px}
+.btn{background:#ffb800;color:#111;padding:13px 25px;border-radius:30px;text-decoration:none;font-weight:800;display:inline-block}
+.stats{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;padding:20px}
+.card{background:white;border-radius:16px;padding:18px;box-shadow:0 4px 15px rgba(0,0,0,.08);flex:1;min-width:140px;text-align:center}
+.card b{font-size:26px;color:#1a4d2e;display:block}
+.search-box{max-width:600px;margin:10px auto 30px;background:white;padding:20px;border-radius:16px;box-shadow:0 4px 15px rgba(0,0,0,.08);text-align:center}
+.search-box input{width:70%;padding:12px;border:2px solid #ddd;border-radius:10px;font-size:16px;text-align:center}
+.search-box button{padding:12px 20px;background:#1a4d2e;color:white;border:none;border-radius:10px;font-weight:700;cursor:pointer;margin-top:10px}
+.animals{max-width:900px;margin:0 auto;padding:0 15px 30px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:15px}
+.animal{background:white;border-radius:16px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,.08)}
+.animal img{width:100%;height:180px;object-fit:cover}
+.animal div{padding:15px}
+.badge{background:#e8f5e9;color:#1a4d2e;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:700}
+.badge2{background:#fff3cd;color:#856404;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:700}
+.result{background:#e8f5e9;border:1px solid #1a4d2e;padding:15px;border-radius:12px;margin-top:15px;text-align:right;display:none}
+footer{background:#111;color:white;text-align:center;padding:25px}
+footer a{color:#ffb800}
+.whatsapp{position:fixed;bottom:20px;left:20px;background:#25D366;color:white;padding:14px 20px;border-radius:30px;text-decoration:none;font-weight:800;box-shadow:0 5px 15px rgba(0,0,0,.3)}
+</style>
+</head>
+<body>
+
+<header>
+<h1>🐑 SMART MAWASHI - KHENCHELA</h1>
+<p>أول تربية مواشي ذكية وموثوقة في خنشلة | Premier élevage traçable à Khenchela</p>
+</header>
+
+<div class="hero">
+<h2>خروفك تعرفو من الولادة حتى العيد</h2>
+<p>كل حيوان عندو QR Code. سكاني الكود وشوف: العمر، التلقيحات، الوزن، الحالة الصحية. بدون غش، بدون كذب.</p>
+<a class="btn" href="#search">🔍 تتبع حيوانك الآن</a>
+</div>
+
+<div class="stats">
+<div class="card"><b>32</b>رأس غنم وبقر</div>
+<div class="card"><b>2 هكتار</b>أرض فلاحية</div>
+<div class="card"><b>100%</b>موثق بـ QR</div>
+<div class="card"><b>60%</b>علف منتج محليا</div>
+</div>
+
+<div class="search-box" id="search">
+<h3>🔍 تتبع حيوانك بـ QR Code</h3>
+<p style="margin:8px 0;color:#666">دخل رقم الحيوان: جرب SM-001 أو SM-002 أو SM-003</p>
+<input id="codeInput" placeholder="مثال: SM-001">
+<br>
+<button onclick="searchAnimal()">بحث / Rechercher</button>
+<div id="result" class="result"></div>
+</div>
+
+<div class="animals">
+<div class="animal">
+<img src="https://images.unsplash.com/photo-1484557985045-edf25e08da73?w=800">
+<div><span class="badge">✅ ملقح - Vacciné</span><h3 style="margin:8px 0">النعجة مباركة - SM-001</h3><p>سلالة: أولاد جلال<br>العمر: 2 سنة<br>الوزن: 48 كغ<br>الحالة: حامل - شهر 3<br>آخر تلقيح: 10 نوفمبر 2026</p><p style="margin-top:8px"><b>السعر: 42.000 دج</b></p></div>
+</div>
+
+<div class="animal">
+<img src="https://images.unsplash.com/photo-1533362297-0da6e4f6f2f7?w=800">
+<div><span class="badge">✅ ملقح - Vacciné</span><h3 style="margin:8px 0">الخروف الشجاع - SM-002</h3><p>سلالة: أولاد جلال<br>العمر: 8 أشهر<br>الوزن: 35 كغ<br>الحالة: جاهز للعيد<br>آخر تلقيح: 15 نوفمبر 2026</p><p style="margin-top:8px"><b>السعر: 45.000 دج</b></p></div>
+</div>
+
+<div class="animal">
+<img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=800">
+<div><span class="badge2">🐄 بقرة حلوب</span><h3 style="margin:8px 0">البقرة رزقة - SM-003</h3><p>سلالة: محلية<br>العمر: 3 سنوات<br>إنتاج الحليب: 12 لتر / يوم<br>الحالة: متوفر حليب طازج كل صباح</p><p style="margin-top:8px"><b>الحليب: 100 دج / لتر</b></p></div>
+</div>
+</div>
+
+<div style="max-width:900px;margin:0 auto;padding:0 15px 30px;text-align:center">
+<h3 style="margin-bottom:15px">📍 مزرعتنا في خنشلة</h3>
+<p>الأرض 1 (1 هكتار): الحظيرة الذكية - تربية وولادة<br>الأرض 2 (1 هكتار): زراعة الفصة والشعير - علف طبيعي<br><br>دورة مغلقة: روث الحيوانات ➜ سماد للأرض ➜ علف للحيوانات</p>
+<br>
+<h3>🤝 للفلاحين الصغار</h3>
+<p>عندك 5 غنمات وحاب تدخلهم في المنصة؟ نعاونوك مجانا. اتصل بنا.</p>
+</div>
+
+<footer>
+<h3>SMART MAWASHI - KHENCHELA</h3>
+<p>صاحب المشروع: [اسمك] | بطاقة فلاح | 2 هكتار في خنشلة</p>
+<p style="margin-top:10px">هاتف: [رقمك] | واتساب: [رقمك]</p>
+<p style="margin-top:10px">© 2026 Smart Mawashi - Tous droits réservés</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/213XXXXXXXXX">💬 اطلب الآن - واتساب</a>
+
+<script>
+const animals = {
+"SM-001":{name:"النعجة مباركة",race:"أولاد جلال",age:"2 سنة",weight:"48 كغ",status:"حامل - شهر 3",vaccin:"10 نوفمبر 2026",price:"42.000 دج"},
+"SM-002":{name:"الخروف الشجاع",race:"أولاد جلال",age:"8 أشهر",weight:"35 كغ",status:"جاهز للعيد",vaccin:"15 نوفمبر 2026",price:"45.000 دج"},
+"SM-003":{name:"البقرة رزقة",race:"محلية",age:"3 سنوات",weight:"320 كغ",status:"تنتج 12 لتر حليب / يوم",vaccin:"01 نوفمبر 2026",price:"100 دج / لتر حليب"}
+};
+function searchAnimal(){
+let code = document.getElementById('codeInput').value.trim().toUpperCase();
+let r = document.getElementById('result');
+if(animals[code]){
+let a = animals[code];
+r.style.display='block';
+r.innerHTML = `<b>✅ تم العثور على الحيوان: ${code}</b><br><br>الاسم: ${a.name}<br>السلالة: ${a.race}<br>العمر: ${a.age}<br>الوزن: ${a.weight}<br>الحالة: ${a.status}<br>آخر تلقيح: ${a.vaccin}<br><b>السعر: ${a.price}</b><br><br>✔️ هذا الحيوان موثق 100% في مزرعة Smart Mawashi - خنشلة`;
+}else{
+r.style.display='block';
+r.style.background='#ffecec';
+r.innerHTML = `❌ الرقم <b>${code}</b> غير موجود. جرب SM-001 أو SM-002 أو SM-003<br><br>إذا شريت خروف من السوق بدون QR، راهو غير موثق. اشري الموثق.`;
+}
+}
+</script>
+</body>
+</html>
